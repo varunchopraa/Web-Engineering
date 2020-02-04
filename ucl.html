@@ -4,7 +4,51 @@
 		<title>UEFA Champions League</title>
         
         <link rel="stylesheet" type="text/css" href="vcstyle.css">
+        
+        <script>
+            function SubmitPatra() {
+                
+                var flag = true;
 
+                if( document.myForm.fname.value == "" ) {
+                    alert( "Please provide your name!" );
+//                    document.myForm.Name.focus() ;
+                    flag = false;
+                 }
+                else
+                    flag = true;
+                if( document.myForm.mail.value == "" ) {
+                    alert( "Please provide your Email!" );
+//                    document.myForm.EMail.focus() ;
+                    flag = false;
+                 }
+                else
+                    flag = true;
+                var numbers = /^[0-9]+$/;
+                if( document.myForm.num.value == "" ) {
+                    alert( "Please provide your Contact No.!" );
+//                    document.myForm.EMail.focus() ;
+                    flag = false;
+                 }
+                
+                else if(document.myForm.num.value.match(numbers)) {
+                    document.myForm.num.focus();
+                    flag = true;
+                }
+                else {
+                    alert('Please input numeric characters only');
+                    document.form1.num.focus();
+                    flag = false;
+                }
+                
+                if(flag == true) {
+                    document.getElementById("demo").innerHTML = "Form submitted successfully.";
+                }
+                
+            }
+            
+        </script>
+        
 	</head>
 
 	<body class="bodyucl">
@@ -21,14 +65,47 @@
             <li>Current champion: Liverpool F.C. (6th title)</li>
             <li>Venues: Wanda Metropolitano Stadium, Milan</li>
         </ul>
-        <br><br>
+        <br>
         <h3 class="h3ucl">Sign up for newsletter</h3>
-        <form>
-           	<label>Email:</label>
-            <input type="text">
-            <button>Submit</button>
+        <form name="myForm" action="#">
+            <table id="table1" cellspacing="5px" cellpadding="5%">
+                <tr>
+                    <td align="right"><label>First Name</label></td>
+                    <td><input type="text" name="fname"><br></td>
+                </tr>
+                <tr>
+                    <td align="right"><label>Last Name</label></td>
+                    <td><input type="text"><br></td>
+                </tr>
+                 <tr>
+                    <td align="right"><label>Sex:</label></td>
+                    <td>
+                        <select class="custom-select" style="width:200px;">
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Others</option>
+                        </select>
+                        <br></td>
+                </tr>
+                <tr>
+                    <td align="right"><label>Email</label></td>
+                    <td><input type="text" name="mail"><br></td>
+                </tr>
+                <tr>
+                    <td align="right"><label>Contact No.</label></td>
+                    <td><input type="text" name="num"><br></td>
+                </tr>
+                
+            </table>
+            
+            <input type="checkbox"><label>I agree to receive emails for promotions and offers.</label><br><br>
+            
+            <p id="demo" style="font-size: medium; font-family: family: Arial, Helvetica, sans-serif; text-align: left;"></p>
+            
+            <input type="submit" value="Submit" class="buttonz" onclick="SubmitPatra()">
+
 		</form>
-		
+        
 	</body>
 
 </html>
