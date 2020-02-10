@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>
+            Eggjam
+        </title>
+        
+        <!-- Bootstrap core CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Material Design Bootstrap -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.3/css/mdb.min.css" rel="stylesheet">
+        
+        <script>
+            function startTime() {
+               var today = new Date();
+                var h = today.getHours();
+                var m = today.getMinutes();
+                var s = today.getSeconds();
+                m = checkTime(m);
+                s = checkTime(s);
+                document.getElementById('clock').innerHTML =
+  h + ":" + m + ":" + s;
+                var t = setTimeout(startTime, 500); 
+            }
+            
+                
+            function checkTime(i) {
+              if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+              return i;
+            }
+        </script>
+    </head>
+    <body onload="startTime()">
+    <div class = "container">
+            <br>
+            <nav class="navbar navbar-expand-lg navbar-dark  fixed-top bg-dark">
+<!--                <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">-->
+         <div class="mx-auto order-0">
+        <a class="navbar-brand mx-auto" href="#">Welcome to the Liverpool Quiz</a>
+                </div>
+                <b><h1 style="font-family: Verdana, Geneva, sans-serif; font-size: 45px; color: aliceblue"></h1></b>
+                
+    
+                <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item" style="color: aliceblue">
+                       <div id="clock" style="color: aliceblue"></div>
+                    </li>
+                </ul>
+                </div>
+            </nav>
+        <br><br><br><br>
+        
+        <form>
+            <h4>Choose the correct option for each of the following questions.</h4><br>
+            <h5>Q1. Recognize the following player:</h5><br>
+            <img src="https://resources.premierleague.com/premierleague/photos/players/250x250/p1814.png" width="350px"><br><br>
+            <input type="radio" name="one" value="Owen">
+            <label>Michael Owen</label><br>
+            <input type="radio" name="one" value="Stevie">
+            <label>Steven Gerrard</label><br>
+            <input type="radio" name="one" value="Rush">
+            <label>Ian Rush</label><br>
+            <input type="radio" name="one" value="Kenny">
+            <label>Kenny Dalglish</label><br>
+            <br>
+            <h5>Q2. Who is Liverpool FC's all-time top goalscorer?</h5><br>
+            
+            <input type="radio" name="two" value="Stevie">
+            <label>Steven Gerrard</label><br>
+            <input type="radio" name="two" value="Rush">
+            <label>Ian Rush</label><br>
+            <input type="radio" name="two" value="Fowler">
+            <label>Robbie Fowler</label><br>
+            <input type="radio" name="two" value="Kenny">
+            <label>Kenny Dalglish</label><br>
+            <br>
+            <h5>Q3. Which of the following is famous rock band from the city of Liverpool?</h5><br>
+            
+            <input type="radio" name="three" value="rolling">
+            <label>The Rolling Stones</label><br>
+            <input type="radio" name="three" value="jd">
+            <label>Joy Division</label><br>
+            <input type="radio" name="three" value="smiths">
+            <label>The Smiths</label><br>
+            <input type="radio" name="three" value="beatles">
+            <label>The Beatles</label><br>
+        </form>
+        </div>
+        
+    
+    
+    </body>
+</html>
