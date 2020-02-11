@@ -28,11 +28,29 @@
               return i;
             }
         </script>
+        
+        <script>
+            function submitQuiz() {
+                var i = 0;
+                if(form.one[1].checked)
+                    i++;
+                if(form.two[1].checked)
+                    i++;
+                if(form.three[3].checked)
+                    i++;
+                if(form.four[2].checked)
+                    i++;
+                if(form.five[1].checked)
+                    i++;
+                
+                window.alert("Thank you for giving the quiz. Your score is " + i + "/5!");
+            }
+        </script>
     </head>
-    <body onload="startTime()">
+    <body style="background-color: #F1EBE1" onload="startTime()">
     <div class = "container">
             <br>
-            <nav class="navbar navbar-expand-lg navbar-dark  fixed-top bg-dark">
+            <nav class="navbar navbar-expand-lg navbar-dark  fixed-top " style="background-color: #C8102E">
 <!--                <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">-->
          <div class="mx-auto order-0">
         <a class="navbar-brand mx-auto" href="#">Welcome to the Liverpool Quiz</a>
@@ -49,9 +67,11 @@
                 </div>
             </nav>
         <br><br><br><br>
+    
         
-        <form>
-            <h4>Choose the correct option for each of the following questions.</h4><br>
+        
+        <form action="#" name="form">
+            <h4><b>Choose the correct option for each of the following questions.</h4></h4></b><br>
             <h5>Q1. Recognize the following player:</h5><br>
             <img src="https://resources.premierleague.com/premierleague/photos/players/250x250/p1814.png" width="350px"><br><br>
             <input type="radio" name="one" value="Owen">
@@ -84,8 +104,37 @@
             <label>The Smiths</label><br>
             <input type="radio" name="three" value="beatles">
             <label>The Beatles</label><br>
+            <br>
+            <h5>Q4. How many Eurpean Championships has Liverpool FC won?</h5><br>
+            
+            <input type="radio" name="four" value="four">
+            <label>4</label><br>
+            <input type="radio" name="four" value="three">
+            <label>3</label><br>
+            <input type="radio" name="four" value="six">
+            <label>6</label><br>
+            <input type="radio" name="four" value="five">
+            <label>5</label><br>
+            <br>
+            <h5>Q5. In which year was Liverpool FC formed?</h5><br>
+            
+            <input type="radio" name="five" value="86">
+            <label>1886</label><br>
+            <input type="radio" name="five" value="correct">
+            <label>1892</label><br>
+            <input type="radio" name="five" value="02">
+            <label>1902</label><br>
+            <input type="radio" name="five" value="95">
+            <label>1895</label><br><br>
+            
+            <input type="button" value="Submit" class="btn" onclick="submitQuiz()" style="color: aliceblue; background-color: #C8102E">
+
         </form>
+        
+         <div id="score"> </div>
+        
         </div>
+      
         
     
     
